@@ -1,0 +1,422 @@
+/* Variables de Color inspiradas en la referencia */
+:root {
+    --bg-color: #F7F3E6; /* Fondo crema pastel */
+    --primary-color: #2e5b3f; /* Naranja vibrante */
+    --secondary-color: #7FA67A; /* Rosa pastel */
+    --text-color: #333333;
+    --white: #FFFFFF;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* Navegación */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 25px 50px;
+    background-color: transparent;
+    transition: var(--transition);
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    background-color: var(--bg-color);
+    padding: 15px 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-decoration: none;
+    color: var(--primary-color);
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.btn-primary-small {
+    background-color: var(--primary-color);
+    color: var(--white) !important;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.btn-primary-small:hover {
+    background-color: #e0442c;
+    transform: translateY(-2px);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+/* Sidebar Redes Sociales */
+.social-sidebar {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
+}
+
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: var(--transition);
+}
+
+.social-btn:hover {
+    transform: scale(1.1) translateX(-5px);
+}
+
+.whatsapp { background-color: #25D366; }
+.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.tiktok { background-color: #000000; }
+
+/* Hero Section */
+.hero {
+    max-width: 1200px;
+    margin: 150px auto 100px;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: var(--secondary-color);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    box-shadow: 0 10px 20px rgba(255, 82, 56, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(255, 82, 56, 0.4);
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transform: rotate(2deg);
+    transition: var(--transition);
+}
+
+.hero-image img:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.badge {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-weight: 800;
+    transform: rotate(10deg);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Colección (Featured) */
+.featured {
+    max-width: 1200px;
+    margin: 0 auto 100px;
+    padding: 0 50px;
+}
+
+.featured h2 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.card-img {
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.card:hover .card-img img {
+    transform: scale(1.1);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Banner CTA */
+.banner-cta {
+    background-color: var(--secondary-color);
+    padding: 80px 50px;
+    margin: 100px 0;
+    text-align: center;
+    border-radius: 50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.banner-content h2 {
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: 40px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    background-color: var(--white);
+    padding: 30px 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.stat-box:hover {
+    transform: scale(1.05);
+}
+
+.stat-box h3 {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 80px 50px 30px;
+}
+
+.footer-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.footer-content p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background-color: var(--white);
+    transform: scale(1.05);
+}
+
+.copyright {
+    margin-top: 60px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Utilidades para Animaciones JS */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 120px;
+    }
+    .hero-content h1 { font-size: 3.5rem; }
+    .badge { right: 10px; }
+}
+
+@media (max-width: 768px) {
+    .navbar { padding: 15px 20px; }
+    .navbar.scrolled { padding: 10px 20px; }
+    .menu-toggle { display: block; }
+    
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color);
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        transform: translateY(-150%);
+        opacity: 0;
+        transition: var(--transition);
+        z-index: -1;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .social-sidebar {
+        right: 10px;
+        gap: 10px;
+    }
+    .social-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .banner-cta {
+        border-radius: 0;
+        padding: 50px 20px;
+    }
+}
